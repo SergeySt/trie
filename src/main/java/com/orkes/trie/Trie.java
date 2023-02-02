@@ -10,12 +10,12 @@ public class Trie {
         if (trieNode.isEndOfWord()) {
             words.add(prefix);
         }
- 
+
         if (trieNode.getChildren().isEmpty())
             return;
 
         for (TrieNode child : trieNode.getChildren().values()) {
-                getAllWordsRecursively(prefix + child.getCharacter(), child, words);
+            getAllWordsRecursively(prefix + child.getCharacter(), child, words);
         }
     }
 
@@ -44,7 +44,7 @@ public class Trie {
     public List<String> getAllWordsWithPrefix(String prefix) {
         TrieNode current = root;
 
-        for (char ch: prefix.toCharArray()) {
+        for (char ch : prefix.toCharArray()) {
             TrieNode node = current.getChildren().get(ch);
             if (node == null) {
                 return List.of();
