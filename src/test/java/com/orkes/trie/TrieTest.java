@@ -30,6 +30,7 @@ public class TrieTest {
 
     @BeforeEach
     void setup() {
+        trie.clean();
         for (String word: testWords) {
             trie.insert(word);
         }
@@ -85,6 +86,13 @@ public class TrieTest {
     void testGetAllWordsWithPrefixNoWords() {
         List<String> words = trie.getAllWordsWithPrefix("spring");
         assertTrue(words.isEmpty());
+    }
+
+    @Test
+    void testCleanTrie() {
+        assertFalse(trie.isEmpty());
+        trie.clean();
+        assertTrue(trie.isEmpty());
     }
 
 }

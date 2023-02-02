@@ -27,6 +27,7 @@ public class StressTrieTest {
 
     @BeforeEach
     void setup() throws URISyntaxException, IOException, InterruptedException {
+        trie.clean();
         try (Stream<String> stream = Files.lines(Paths.get(resource.getFile().getPath()))) {
 			stream.forEach(s -> trie.insert(s));
 		} catch (IOException e) {

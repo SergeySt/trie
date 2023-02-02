@@ -62,4 +62,8 @@ public class Trie {
         return root.getChildren().isEmpty();
     }
 
+    public void clean() {
+        root = new TrieNode(' ');
+    }
+
 }
