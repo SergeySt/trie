@@ -81,4 +81,10 @@ public class TrieTest {
         assertTrue(words.contains(triad));
     }
 
+    @Test
+    void testGetAllWordsWithPrefixNoWords() {
+        List<String> words = trie.getAllWordsWithPrefix("spring");
+        assertTrue(words.isEmpty());
+    }
+
 }
